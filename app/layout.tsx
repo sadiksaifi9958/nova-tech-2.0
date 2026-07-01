@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NovaTech",
+  title: "NovaTech 2.0",
   description:
     "A digital agency offering web design, SEO and branding services.",
 };

@@ -20,7 +20,7 @@ function Navbar() {
   return (
     <nav className="w-full border-b px-6 py-4 flex items-center justify-between">
       <Link href="/" className="text-xl font-bold">
-        Nova<span>Tech</span>
+        Nova<span className="text-primary">Tech</span>
       </Link>
       <div className="hidden md:flex gap-6">
         {navlinks.map((item) => (
