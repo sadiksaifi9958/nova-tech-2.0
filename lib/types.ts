@@ -22,3 +22,10 @@ export type Feature = {
   desc: string;
   icon: LucideIcon;
 };
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  avatarColor: string;
+};

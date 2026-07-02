@@ -1,5 +1,6 @@
+import { AvatarFallback, Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Feature } from "@/lib/types";
+import { Feature, Testimonial } from "@/lib/types";
 import { Clock, MonitorSmartphone, ShieldCheck } from "lucide-react";
 
 const features: Feature[] = [
@@ -17,6 +18,30 @@ const features: Feature[] = [
     title: "Secure & Reliable",
     desc: "Built with modern technologies to keep your website safe 24/7.",
     icon: ShieldCheck,
+  },
+];
+
+const testimonials: Testimonial[] = [
+  {
+    quote:
+      "NovaTech transformed our online presence. Our website loads faster and looks stunning on every device.",
+    name: "Arjun Kumar",
+    role: "CEO, TechStart India",
+    avatarColor: "linear-gradient(135deg, #1a42f5, #6080ff)",
+  },
+  {
+    quote:
+      "Professional, fast and incredibly responsive. They delivered beyond our expectations every step of the way.",
+    name: "Sara Patel",
+    role: "Founder, GrowthBox",
+    avatarColor: "linear-gradient(135deg, #7c3aed, #c4b5fd)",
+  },
+  {
+    quote:
+      "Working with NovaTech was a great experience. They understood our vision and built exactly what we needed.",
+    name: "Mohammed Raza",
+    role: "MD, Raza Enterprises",
+    avatarColor: "linear-gradient(135deg, #0a7c56, #34d399)",
   },
 ];
 
@@ -193,41 +218,98 @@ export default function Home() {
         </div>
       </section>
       {/* Features Section */}
-      <section className="py-24 px-[5%] bg-card border-y border-border">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-end mb-14">
-          <div>
-            <div className="text-xs text-primary bg-primary/10 inline-flex rounded-full px-4 py-1 font-semibold uppercase tracking-widest mb-3">
-              Our Features
+      <section className="py-24 px-[5%] bg-card border-t border-border">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-end mb-14">
+            <div>
+              <div className="text-xs text-primary bg-primary/10 inline-flex rounded-full px-4 py-1 font-semibold uppercase tracking-widest mb-3">
+                Our Features
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground">
+                Powerful Tools for Your Business
+              </h2>
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground">
-              Powerful Tools for Your Business
-            </h2>
+            <div>
+              <p className="text-muted-foreground font-light leading-relaxed text-sm max-w-sm md:ml-auto">
+                Everything you need to build, grow, and scale your digital
+                presence — all in one place.
+              </p>
+            </div>
           </div>
-          <div>
-            <p className="text-muted-foreground font-light leading-relaxed text-sm max-w-sm md:ml-auto">
-              Everything you need to build, grow, and scale your digital
-              presence — all in one place.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-4">
+            {features.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="bg-background border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-md transition-all duration-200"
+                >
+                  <div className="w-11 h-11 bg-primary/10 border border-primary/15 rounded-xl flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-4">
-          {features.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="bg-background border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-md transition-all duration-200"
-              >
-                <div className="w-11 h-11 bg-primary/10 border border-primary/15 rounded-xl flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                  {item.desc}
-                </p>
+      </section>
+      {/* Testimonials Section */}
+      <section className="py-24 px-[5%] bg-background border-t border-border">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-end mb-14">
+            <div>
+              <div className="text-xs text-primary bg-primary/10 inline-flex rounded-full px-4 py-1 font-semibold uppercase tracking-widest mb-3">
+                testimonials
               </div>
-            );
-          })}
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground">
+                What our clients say
+              </h2>
+            </div>
+            <div>
+              <p className="text-muted-foreground font-light leading-relaxed text-sm max-w-sm md:ml-auto">
+                Real feedback from real businesses we have helped grow.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-4">
+            {testimonials.map((item) => (
+              <div
+                key={item.name}
+                className="bg-card border border-border rounded-2xl p-7 flex flex-col gap-5 hover:border-primary/20 hover:shadow-md transition-all duration-200"
+              >
+                <div className="flex gap-1 text-[#e8920d]">★★★★★</div>
+                <p className="text-sm text-foreground font-light leading-relaxed italic flex-1">
+                  "{item.quote}"
+                </p>
+                <hr className="border-border" />
+                <div className="flex items-center gap-3">
+                  <Avatar>
+                    <AvatarFallback
+                      style={{ background: item.avatarColor }}
+                      className="text-white text-xs font-bold"
+                    >
+                      {item.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">
+                      {item.name}
+                    </p>
+                    <p className="text-xs text-muted-foreground">{item.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>
