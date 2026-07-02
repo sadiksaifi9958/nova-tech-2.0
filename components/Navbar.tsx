@@ -19,8 +19,10 @@ function Navbar() {
 
   return (
     <nav className="w-full border-b px-6 py-4 flex items-center justify-between">
-      <Link href="/" className="text-xl font-bold">
-        Nova<span className="text-primary">Tech</span>
+      <Link href="/" className="text-xl font-extrabold">
+        <h1>
+          Nova<span className="text-primary">Tech</span>
+        </h1>
       </Link>
       <div className="hidden md:flex gap-6">
         {navlinks.map((item) => (
