@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Syne, DM_Sans } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
