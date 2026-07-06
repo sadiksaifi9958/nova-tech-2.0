@@ -312,6 +312,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="pb-24 px-[5%]">
+        <div className="bg-ink rounded-3xl p-16 md:p-20 flex items-center justify-between gap-12">
+          <div>
+            <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#7da0ff] bg-blue-pale border border-blue-glow rounded-full px-4 py-1 mb-4">
+              Get Started Today
+            </div>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-white leading-tight mb-4">
+              Ready to grow your{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #6080ff, #a0b4ff)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                business online?
+              </span>
+            </h1>
+            <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-sm">
+              Let's build something great together. Join 100+ businesses already
+              growing with NovaTech.
+            </p>
+          </div>
+          <div className="flex flex-col items-start gap-3 shrink-0">
+            <Button size="lg">Get Started →</Button>
+            <p className="text-xs text-muted-foreground">
+              No setup fee · Cancel anytime
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
