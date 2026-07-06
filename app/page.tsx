@@ -1,7 +1,8 @@
 import { AvatarFallback, Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Feature, Testimonial } from "@/lib/types";
-import { Clock, MonitorSmartphone, ShieldCheck } from "lucide-react";
+import { Clock, MonitorSmartphone, Section, ShieldCheck } from "lucide-react";
 
 const features: Feature[] = [
   {
@@ -312,10 +313,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* CTA Section */}
       <section className="pb-24 px-[5%]">
         <div className="bg-ink rounded-3xl p-16 md:p-20 flex items-center justify-between gap-12">
           <div>
-            <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#7da0ff] bg-blue-pale border border-blue-glow rounded-full px-4 py-1 mb-4">
+            <div className="inline-block text-xs font-bold uppercase tracking-widest text-[#7da0ff] bg-[rgba(125,160,255,0.12)] border border-blue-glow rounded-full px-4 py-1 mb-4">
               Get Started Today
             </div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-white leading-tight mb-4">
@@ -339,6 +341,56 @@ export default function Home() {
             <Button size="lg">Get Started →</Button>
             <p className="text-xs text-muted-foreground">
               No setup fee · Cancel anytime
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* Newsletter Section */}
+      <section className="pb-24 px-[5%] bg-background">
+        <div className="bg-card border border-border rounded-3xl p-10 grid grid-cols-1-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-block text-xs font-bold uppercase tracking-widest text-green bg-green-pale border border-green/20 rounded-full px-4 py-1 mb-4">
+              Newsletter
+            </div>
+            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tighter text-foreground mb-3">
+              Stay ahead of the tech curve.
+            </h1>
+            <p className="text-sm text-muted-foreground font-light leading-relaxed mb-5">
+              Get weekly insights on tech trends and growth strategies —
+              straight to your inbox.
+            </p>
+            <ul className="flex flex-col gap-2 mt-2">
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-5 h-5 rounded-full bg-green-pale border border-green/20 flex items-center justify-center text-green text-[10px]">
+                  ✓
+                </span>
+                Weekly curated tech insights
+              </li>
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-5 h-5 rounded-full bg-green-pale border border-green/20 flex items-center justify-center text-green text-[10px]">
+                  ✓
+                </span>
+                Early access to new features
+              </li>
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-5 h-5 rounded-full bg-green-pale border border-green/20 flex items-center justify-center text-green text-[10px]">
+                  ✓
+                </span>
+                No spam, unsubscribe anytime
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p>Join 2,000+ subscribers already reading.</p>
+            <div className="flex flex-col gap-3">
+              <Input placeholder="Your name" />
+              <Input placeholder="Enter your email address" type="email" />
+              <Button className="w-full" size="lg">
+                Subscribe — it's free
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground text-center mt-2">
+              No spam. Unsubscribe anytime.
             </p>
           </div>
         </div>
