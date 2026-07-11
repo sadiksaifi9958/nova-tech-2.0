@@ -1,10 +1,31 @@
 import React from "react";
-import { Stat } from "@/lib/types";
+import { Stat, Feature } from "@/lib/types";
+import { Rocket, TrendingUp, Shield } from "lucide-react";
+
 const stats: Stat[] = [
   { number: "50", suffix: "+", label: "Projects completed" },
   { number: "100", suffix: "+", label: "Happy clients" },
   { number: "5", suffix: "yrs", label: "Industry experience" },
 ];
+
+const missions: Feature[] = [
+  {
+    title: "Launch faster",
+    desc: "We deliver projects on time without compromising on quality or detail.",
+    icon: Rocket,
+  },
+  {
+    title: "Grow smarter",
+    desc: "Every decision we make is backed by strategy and focused on your business goals.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Stay secure",
+    desc: "Security is built in from day one — not added as an afterthought.",
+    icon: Shield,
+  },
+];
+
 function page() {
   return (
     <>
@@ -40,6 +61,57 @@ function page() {
                 </h2>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="px-[5%] py-24 bg-ink">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div>
+            <div className="border border-white/20 text-white/60 text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full inline-block mb-6">
+              Our Mission
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-white leading-tight mb-5">
+              Built for{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #3d62ff, #a0b4ff)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  color: "transparent",
+                }}
+              >
+                business growth
+              </span>
+            </h2>
+            <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-sm">
+              We believe every business deserves a powerful online presence. Our
+              mission is to make that possible through smart, affordable, and
+              beautiful web solutions that actually work.
+            </p>
+          </div>
+          <div className="flex flex-col">
+            {missions.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  className="flex items-start gap-4 py-6 border-b border-white/10 last:border-0"
+                  key={item.title}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                    <Icon className="w-4 h-4 text-[#7da0ff]" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-white mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
