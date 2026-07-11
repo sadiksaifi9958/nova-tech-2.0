@@ -29,3 +29,9 @@ export type Testimonial = {
   role: string;
   avatarColor: string;
 };
+
+export type Stat = {
+  number: string;
+  suffix: string;
+  label: string;
+};
