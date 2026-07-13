@@ -35,3 +35,16 @@ export type Stat = {
   suffix: string;
   label: string;
 };
+
+export type PricingPlan = {
+  name: string;
+  price: string;
+  desc: string;
+  features: string[];
+  featured: boolean;
+};
+
+export type FAQ = {
+  question: string;
+  answer: string;
+};
