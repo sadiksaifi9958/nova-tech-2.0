@@ -8,6 +8,10 @@ import {
   Target,
   Handshake,
   Lightbulb,
+  Smartphone,
+  Code2,
+  ShieldCheck,
+  Headphones,
 } from "lucide-react";
 
 const stats: Stat[] = [
@@ -54,6 +58,39 @@ const values: Feature[] = [
     title: "Innovation",
     desc: "We stay ahead of the curve using the latest technologies to deliver modern solutions",
     icon: Lightbulb,
+  },
+];
+
+const choose: Feature[] = [
+  {
+    title: "Strategy first approach",
+    desc: "We understand your business goals before writing a single line of code. Every decision is backed by strategy",
+    icon: Lightbulb,
+  },
+  {
+    title: "Mobile first design",
+    desc: "Over 60% of web traffic comes from mobile. Every website we build looks and works perfectly on all devices.",
+    icon: Smartphone,
+  },
+  {
+    title: "Clean code standards",
+    desc: "We write maintainable, well-structured code so your website is easy to update and scale as you grow.",
+    icon: Code2,
+  },
+  {
+    title: "Security built in",
+    desc: "Security is not an afterthought. Every project is built with modern security standards from day one.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Performance optimised",
+    desc: "Fast loading websites rank higher on Google and convert more visitors into customers.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Dedicated support",
+    desc: "We are with you after launch. Our team provides ongoing support to keep your website running smoothly.",
+    icon: Headphones,
   },
 ];
 
@@ -159,6 +196,41 @@ function page() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-10">
             {values.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  className="bg-background border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-md transition-all duration-200"
+                  key={item.title}
+                >
+                  <span className="w-11 h-11 bg-primary/10 border border-primary/15 rounded-xl flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </span>
+                  <h3 className="font-bold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      <section className="py-24 px-[5%] bg-background border-y border-border">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-xs text-primary bg-primary/10 inline-flex rounded-full px-4 py-1 font-semibold uppercase tracking-widest mb-3">
+            Why Choose Us
+          </div>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-foreground mt-3 mb-2">
+            What makes Nova<span className="text-primary">Tech</span> different
+          </h1>
+          <p className="text-sm text-muted-foreground font-light leading-relaxed">
+            We go beyond just building websites — we build digital experiences
+            that grow your business.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
+            {choose.map((item) => {
               const Icon = item.icon;
               return (
                 <div
